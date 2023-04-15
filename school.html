@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up/Login Page</title>
+    <link rel="stylesheet" href="stylelogin.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="Capture.PNG">
+   
+  </head>
+  <body>
+    <main> 
+        <nav>
+            <a href="index.html">
+              <img src="heronew.PNG" alt="Logo">
+            </a>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="about.html">About</a></li>
+              <li  ><button class="button" type="button" onclick ="window.location.href='login.html'">Login</button></li>
+              <li ><button type="button" class="button"onclick ="window.location.href='sign.html'">Sign up</button></li>
+            </ul>
+          </nav>
+          
+
+    
+    <div class="container">
+      <div class="form-container">
+        <h2>for school student</h2>
+        <form action="connect.php" method="post" name="submit-to-google-sheet" >
+            <input type="text" id="firstname" required placeholder="first name" name="firstName"/>
+            <input type="text" id="lastname" required placeholder="last name" name="lastName"/>
+        
+
+         
+          <input type="email" id="email" required placeholder="email" name="email"/>
+         
+          <p>Please select your language:</p>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">c++</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">java</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">python</label>
+         
+         <h1>v/s</h1>
+         <input type="text" placeholder="enter the compatitive name ">
+         <input type="text" placeholder="enter the school / college name">
+          <button type="submit">send the request</button>
+        </form>
+      
+
+</main> 
+  </body>
+</html>
