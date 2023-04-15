@@ -1,0 +1,2 @@
+<img src="college.PNG" alt="college">
+    <img src="school.PNG" alt="school">

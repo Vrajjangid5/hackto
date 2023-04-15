@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up/Login Page</title>
+    <link rel="stylesheet" href="stylelogin.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="Capture.PNG">
+   
+  </head>
+  <body>
+    <main> 
+        <nav>
+            <a href="index.html">
+              <img src="heronew.PNG" alt="Logo">
+            </a>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="about.html">About</a></li>
+              <li  ><button class="button" type="button" onclick ="window.location.href='login.html'">Login</button></li>
+              <li ><button type="button" class="button"onclick ="window.location.href='sign.html'">Sign up</button></li>
+            </ul>
+          </nav>
+          
+
+    
+    <div class="container">
+      <div class="form-container">
+        <h2>Sign Up</h2>
+        <form action="connect.php" method="post" name="submit-to-google-sheet" >
+            <input type="text" id="firstname" required placeholder="first name" name="firstName"/>
+            <input type="text" id="lastname" required placeholder="last name" name="lastName"/>
+        
+
+         
+          <input type="email" id="email" required placeholder="email" name="email"/>
+           
+         
+         
+         
+          <input type="password" id="password" required placeholder="password" name="password"/>
+          <input type="number" id="number" required placeholder="number" name="number"/>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzVPZBVqnadw2Vdjrm_EQ0AjxwXi0yhxCXUGN9nkOe9oNKgd5NxHyXh2Fv_v7FAy5Km/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+</main> 
+  </body>
+</html>

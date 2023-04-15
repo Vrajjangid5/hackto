@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up/Login Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="Capture.PNG">
+   
+  </head>
+  <body>
+    <main> 
+        <nav>
+            <a href="index.html">
+              <img src="heronew.PNG" alt="Logo">
+            </a>
+            <ul>
+              <li><a class="atext" href="index.html">Home</a></li>
+              <li><a class="atext" href="contact.html">Contact Us</a></li>
+              <li><a class="atext" href="about.html">About</a></li>
+              <li ><button class="button" type="button" onclick ="window.location.href='login.html'">Login</button></li>
+              <li ><button class="button" type="button" onclick ="window.location.href='sign.html'">Sign up</button></li>
+            </ul>
+          </nav>
+          
+ 
+  <div class="container">
+    <form id="contact-form" method="post" action="#" name="submit-to-google-sheet">
+      <h1>Contact Us</h1>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name.." required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email.." required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Write something.." required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyKiXkvyy0voYOXTRq2T97YVQmGMbA4UVIP4z0gMd0nrzSY5u-O1UsmFnN-ZDC9zMra/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</main> 
+
+
+  </body>
+</html>
